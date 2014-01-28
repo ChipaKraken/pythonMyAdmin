@@ -54,8 +54,7 @@ print '''<html
 lang="en"><head><meta charset="utf-8" /><title>jQuery UI Autocomplete - Default functionality</title>
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /><script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script><link rel="stylesheet" href="/resources/demos/style.css" />
-		<script>$(function(){var availableTags = ['''
-print '''];$( "#tags" ).autocomplete({source: availableTags});});</script></head>
+		<script>$(function(){var availableTags = [/*some tags here*/];$( "#tags" ).autocomplete({source: availableTags});});</script></head>
 <body><center><div class="ui-widget"><form class="form-container"><input type="text" id="tags" name="q"><br>
 <input class="submit-button" type=submit value="Submit"></form></div>'''
 cur.execute("show tables;")
