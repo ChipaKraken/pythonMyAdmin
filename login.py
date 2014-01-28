@@ -11,7 +11,7 @@ dbname = form.getvalue('dbname')
 html = '''<html>
 <head>
 	<title>Login Form</title>
-	<link rel="stylesheet" href="../style.css" type="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
 	<style>
 		body {background-image:url('http://www.unsigneddesign.com/Seamless_background_textures/thumbs/seamlesstexture6_1200.jpg');}
 	</style>
