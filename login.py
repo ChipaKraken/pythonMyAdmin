@@ -8,6 +8,7 @@ form = cgi.FieldStorage()
 login = form.getvalue('login')
 password = form.getvalue('password')
 dbname = form.getvalue('dbname')
+hostname = form.getvalue('hostname')
 html = '''<html>
 <head>
 	<title>Login Form</title>
@@ -21,12 +22,19 @@ html = '''<html>
 body = '''<br/><br/><br/><br/>
 	<form class="form-container">
 	<div class="form-title"><h2>Log in</h2></div>
+
 	<div class="form-title">Name</div>
 	<input class="form-field" type="text" name="login" /><br />
+
 	<div class="form-title">Password</div>
 	<input class="form-field" type="password" name="password" /><br />
+
 	<div class="form-title">DB Name</div>
 	<input class="form-field" type="text" name="dbname" /><br />
+
+	<div class="form-title">DB Host</div>
+	<input class="form-field" type="text" name="hostname" /><br />
+
 	<div class="submit-container">
 	<input class="submit-button" type="submit" value="Submit" />
 	</div>
@@ -36,10 +44,11 @@ body = '''<br/><br/><br/><br/>
 </html>''' 
 print "Content-type:text/html"
 if login != None and password != None and dbname != None:
-	db = MySQLdb.connect(host="localhost", user=login, passwd=password,db=dbname)
+	db = MySQLdb.connect(host=hostname or "localhost", user=login, passwd=password,db=dbname)
 	print "Set-Cookie: user=%s" % login
 	print "Set-Cookie: passwd=%s" % password
 	print "Set-Cookie: db=%s" % dbname
+	print "Set-Cookie: host=%s" % (hostname or "localhost")
 	print 'Location: cl.py'
 print '\r\n\r\n'
 print html

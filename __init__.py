@@ -31,18 +31,8 @@ print '\r\n\r\n'
 userq = ''
 passwdq = ''
 dbq = ''
+hostq = ''
 
-
-try:
-	if query != None:
-		if 'drop' in query or 'DROP' in query:
-			print 'What are you doing... Huh?'
-			sys.exit(0)
-		if 'delete' in query or 'DELETE' in query:
-			print 'What are you doing... Huh?'
-			sys.exit(0)
-except Exception, e:
-	print "Check ERROR"
 cookie = cookie.split(';')
 for param in cookie:
 	if 'user=' in param:
@@ -51,8 +41,10 @@ for param in cookie:
 		passwdq = param[8:]
 	if 'db=' in param:
 		dbq = param[4:]
+	if 'host=' in param:
+		hostq = param[6:]
 try:
-	db = MySQLdb.connect(host="localhost", user=userq, passwd=passwdq,db=dbq)
+	db = MySQLdb.connect(host=hostq, user=userq, passwd=passwdq,db=dbq)
 	cur = db.cursor()
 except Exception, e:
 	print "DB ERROR"
