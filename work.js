@@ -40,18 +40,18 @@ var NURALY = {
 	"RAM":"2 GB",
 	"HDD helth":"GOOD"
 }
-var wertyuiop = {
-	"MAC":"F8-D1-11-0A-9B-5A",
-	"proc":["2core","1.8 GHz"],
-	"RAM":"2 GB",
-	"HDD helth": "GOOD"
-}
 var Ad123 = {
 	"MAC":"74-2F-68-42-A8-AD",
 	"proc":["2core","1.8 GHz"],
 	"RAM":"2 GB",
 	"HDD helth":"GOOD"
 }
-//wertyuiop - 
+/*?*/var wertyuiop = {
+	"MAC":"F8-D1-11-0A-9B-5A",
+	"proc":["2core","1.8 GHz"],
+	"RAM":"2 GB",
+	"HDD helth": "GOOD"
+}
 //dzxgx - back up server
-//Ad123 - 
+//wertyuiop - 
+//Ad123 - Asel 
